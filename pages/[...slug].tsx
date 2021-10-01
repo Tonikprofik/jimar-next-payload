@@ -43,14 +43,14 @@ const Page: React.FC<Props> = (props) => {
       <RenderBlocks layout={page.layout} />
       <footer className={classes.footer}>
         <hr />
-        NextJS + Payload Server Boilerplate made by
+        NextJS + Payload Server made by
         {' '}
         <a
-          href="https://payloadcms.com"
+          href="https://github.com/Tonikprofik"
           target="_blank"
           rel="noopener noreferrer"
         >
-          Payload
+          Tonikprofik
         </a>
       </footer>
     </main>
