@@ -3,6 +3,17 @@ import {CollectionConfig} from 'payload/types';
 const FormSubmission: CollectionConfig = {
 
     slug: 'form-submissions',
+    access: {
+      create: () => true,
+    },
+    hooks: {
+      afterChange: [
+        () => {
+          //send an email to the client
+          // with content of the message
+        },
+      ],
+    },
     fields: [
       {
         type: 'text',
@@ -30,9 +41,9 @@ const FormSubmission: CollectionConfig = {
         admin: {
           position: 'sidebar',
           readOnly: true
-        }
-      }
-    ]
+        },
+      },
+    ],
  };
 
 export default FormSubmission
