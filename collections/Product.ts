@@ -1,5 +1,6 @@
 import { CollectionConfig } from "payload/types";
 import slug from '../fields/slug';
+import meta from '../fields/meta';
 
 const Product : CollectionConfig = {
   slug: "product",
@@ -18,6 +19,7 @@ const Product : CollectionConfig = {
         required: true,
     },
     slug,
+    meta,
     {
       name: 'price',
       label: 'Price',
@@ -28,6 +30,11 @@ const Product : CollectionConfig = {
       name: 'description',
       label: 'Description',
       type: 'richText',
+    },
+    {
+      name: 'brand',
+      label: 'Brand',
+      type: 'text'
     },
     {
       name: 'categories',
