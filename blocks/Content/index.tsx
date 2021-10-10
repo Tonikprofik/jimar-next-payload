@@ -1,7 +1,7 @@
 import React from "react";
 import { Block } from "payload/types";
 import RichText from "../../components/RichText";
-import RedUnderline from '../../components/RichText/leaves/RedUnderline';
+// import RedUnderline from '../../components/RichText/leaves/RedUnderline';
 import classes from "./index.module.css";
 import backgroundColor, {
   Type as backgroundColorType,
@@ -94,7 +94,7 @@ export const Content: Block = {
           type: "richText",
           required: true,
           admin: {
-            leaves: [RedUnderline],
+            leaves: ["bold"],
             elements: [
               "h2",
               "h3",

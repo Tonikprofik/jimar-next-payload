@@ -46,10 +46,10 @@ export default class MyDocument extends Document {
         // important. It prevents emotion to render invalid HTML.
         // See https://github.com/mui-org/material-ui/issues/26561#issuecomment-855286153
         const emotionStyles = extractCriticalToChunks(initialProps.html);
-        const emotionStyleRags = emotionStyles.styles.map((styles) => (
+        const emotionStyleTags = emotionStyles.styles.map((style) => (
             <styles data-emotion={`${style.key} ${style.ids.join(' ')}`}
                     key={style.key}
-                    dangrouslySetInnerHTML={{__html:style.css}} 
+                    dangerouslySetInnerHTML={{ __html: style.css }} 
             />
         ));
 

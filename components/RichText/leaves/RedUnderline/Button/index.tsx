@@ -1,10 +1,11 @@
 import React from 'react';
-import { LeafButton } from 'payload/components/rich-text';
+// import { LeafButton } from 'payload/components/rich-text';
+import { Button as MuiButton } from '@mui/material/';
 
 const Button = () => (
-  <LeafButton format="red-underline">
+  <MuiButton>
     Red Underline
-  </LeafButton>
+  </MuiButton>
 );
 
 export default Button;
