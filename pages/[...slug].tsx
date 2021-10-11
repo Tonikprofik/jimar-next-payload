@@ -1,5 +1,8 @@
 import React from 'react';
 import payload from 'payload';
+import { AppBar, Toolbar } from '@mui/material/';
+import HideAppBar from '../components/layout/HideAppBar';
+
 import { GetServerSideProps } from 'next';
 import getConfig from 'next/config';
 import { Type as PageType } from '../collections/Page';
@@ -7,6 +10,7 @@ import NotFound from '../components/NotFound';
 import Head from '../components/Head';
 import classes from '../css/page.module.css';
 import RenderBlocks from '../components/RenderBlocks';
+import App from 'next/app';
 
 const { publicRuntimeConfig: { SERVER_URL } } = getConfig();
 
@@ -41,6 +45,11 @@ const Page: React.FC<Props> = (props) => {
         )}
       </div>
       <RenderBlocks layout={page.layout} />
+
+      <HideAppBar/>
+     
+
+
       <footer className={classes.footer}>
         <hr />
         NextJS + Payload Server made by
