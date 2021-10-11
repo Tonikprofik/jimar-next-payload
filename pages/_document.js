@@ -19,12 +19,7 @@ export default class MyDocument extends Document {
                     <body>
                         <Main/>
                         <NextScript/>
-
-
-
-
                     </body>
-
 
                 </Html>
             )
@@ -39,7 +34,8 @@ export default class MyDocument extends Document {
 
         ctx.renderPage = () => 
         originalRenderPage({
-            enhanceApp: (App) => (props) => <App emotioncache={cache} {...props} />,
+            enhanceApp: (App) => (props) =>
+             <App emotioncache={cache} {...props} />,
         });
 
         const initialProps = await Document.getInitialProps(ctx);
