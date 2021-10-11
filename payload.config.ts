@@ -5,6 +5,7 @@ import Media from './collections/Media';
 import FormSubmission from './collections/FormSubmission';
 import Product from './collections/Product';
 import Category from './collections/Category';
+import MegaMenu from './globals/MegaMenu';
 dotenv.config();
 
 export default buildConfig({
@@ -15,5 +16,8 @@ export default buildConfig({
     Product,
     Category,
     FormSubmission
+  ],
+  globals: [
+    MegaMenu,
   ],
 });

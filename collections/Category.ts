@@ -9,7 +9,7 @@ export type Type = {
 const Category: CollectionConfig = {
   slug: "categories",
   admin: {
-    useAsTitle: "title",
+    useAsTitle: "Name",
   },
   access: {
     read: () => true,
