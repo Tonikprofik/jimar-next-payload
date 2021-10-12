@@ -2,6 +2,7 @@ import React from 'react';
 import payload from 'payload';
 import { AppBar, Toolbar } from '@mui/material/';
 import HideAppBar from '../components/layout/HideAppBar';
+import ProductList from '../components/layout/ProductList';
 
 import { GetServerSideProps } from 'next';
 import getConfig from 'next/config';
@@ -47,7 +48,9 @@ const Page: React.FC<Props> = (props) => {
       <RenderBlocks layout={page.layout} />
 
       <HideAppBar/>
-     
+      
+      <ProductList/>
+
 
 
       <footer className={classes.footer}>
