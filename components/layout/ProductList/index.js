@@ -14,12 +14,12 @@ import Container from "@mui/material/Container";
 import Link from "@mui/material/Link";
 
 export default function ProductList() {
-  const cards = [1, 2, 3, 4, 5, 6];
+  const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
   return (
     <>
       <Box>
         <Container>
-          <Grid container spacing={4} sx={{ display: "block" }}>
+          <Grid container spacing={4}>
             {cards.map((card) => (
               <Grid item key={card} xs={12} sm={6} md={4}>
                 <Card
