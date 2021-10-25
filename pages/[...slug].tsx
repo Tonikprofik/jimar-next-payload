@@ -1,24 +1,27 @@
-import React from 'react';
-import payload from 'payload';
-import { AppBar, Toolbar } from '@mui/material/';
-import HideAppBar from '../components/layout/HideAppBar';
-import ProductList from '../components/layout/ProductList';
+import React from "react";
+import payload from "payload";
+import { AppBar, Toolbar } from "@mui/material/";
+import HideAppBar from "../components/layout/HideAppBar";
+import ProductList from "../components/layout/ProductList";
+import Checkout from "../components/checkout/Checkout";
 
-import { GetServerSideProps } from 'next';
-import getConfig from 'next/config';
-import { Type as PageType } from '../collections/Page';
-import NotFound from '../components/NotFound';
-import Head from '../components/Head';
-import classes from '../css/page.module.css';
-import RenderBlocks from '../components/RenderBlocks';
-import App from 'next/app';
+import { GetServerSideProps } from "next";
+import getConfig from "next/config";
+import { Type as PageType } from "../collections/Page";
+import NotFound from "../components/NotFound";
+import Head from "../components/Head";
+import classes from "../css/page.module.css";
+import RenderBlocks from "../components/RenderBlocks";
+import App from "next/app";
 
-const { publicRuntimeConfig: { SERVER_URL } } = getConfig();
+const {
+  publicRuntimeConfig: { SERVER_URL },
+} = getConfig();
 
 export type Props = {
-  page?: PageType
-  statusCode: number
-}
+  page?: PageType;
+  statusCode: number;
+};
 
 const Page: React.FC<Props> = (props) => {
   const { page } = props;
@@ -40,23 +43,24 @@ const Page: React.FC<Props> = (props) => {
       <div className={classes.featuredImage}>
         {page.image && (
           <img
-            src={`${SERVER_URL}/media/${page.image.sizes?.feature?.filename || page.image.filename}`}
+            src={`${SERVER_URL}/media/${
+              page.image.sizes?.feature?.filename || page.image.filename
+            }`}
             alt={page.image.alt}
           />
         )}
       </div>
       <RenderBlocks layout={page.layout} />
 
-      <HideAppBar/>
-      
-      <ProductList/>
+      <HideAppBar />
 
+      <ProductList />
 
+      <Checkout />
 
       <footer className={classes.footer}>
         <hr />
-        NextJS + Payload Server made by
-        {' '}
+        NextJS + Payload Server made by{" "}
         <a
           href="https://github.com/Tonikprofik"
           target="_blank"
@@ -72,10 +76,10 @@ const Page: React.FC<Props> = (props) => {
 export default Page;
 
 export const getServerSideProps: GetServerSideProps = async (ctx) => {
-  const slug = ctx.params?.slug || 'home';
+  const slug = ctx.params?.slug || "home";
 
   const pageQuery = await payload.find({
-    collection: 'pages',
+    collection: "pages",
     where: {
       slug: {
         equals: slug,
